@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Box } from '@mui/material'
-import './App.css'
 import { Home, Login } from './pages'
 import { Marquee, Navbar } from './components'
 

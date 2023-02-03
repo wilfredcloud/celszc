@@ -5,7 +5,7 @@ import { Home, Login } from './pages'
 import { Marquee, Navbar } from './components'
 
 const App = () => (
-  <Box>
+  <div>
     <Marquee/>
     <Navbar/>
     <BrowserRouter>
@@ -14,7 +14,7 @@ const App = () => (
         <Route path='/login' element={<Login/>} />
       </Routes>
     </BrowserRouter>
-  </Box>
+  </div>
 )
 
 export default App

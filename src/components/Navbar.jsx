@@ -23,7 +23,7 @@ function classNames(...classes) {
 
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="bg-white border-b">
+    <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -72,8 +72,12 @@ const Navbar = () => {
               {/* </div> */}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                  <button type="button"
-                  className="bg-amber-400 rounded-md p-2 text-white
-                   hover:bg-amber-500"> Live Service
+                  className="rounded-md bg-amber-400 
+                  px-3.5 py-2 text-base font-semibold leading-7
+                   text-white shadow-sm hover:bg-amber-300 
+                   focus-visible:outline focus-visible:outline-2 
+                   focus-visible:outline-offset-2 focus-visible:outline-amber-400 
+                   "> Live Service
                 </button>
 
               

@@ -9,7 +9,7 @@ const Hero = () => {
       rgba(9, 51, 124, 0.6)), 
       url(${HeroBanner})`}}
       className=" h-[546px] text-white  ">
-        <div className="flex flex-col justify-center container mx-auto h-full px-4 md:px-0">
+        <div className="flex flex-col justify-center container mx-auto h-full px-4">
 
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[50px] lg:leading-[90px]" style={{fontFamily: 'Merriweather, serif'}}>
           Welcome To Christ Embassy <br />

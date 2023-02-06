@@ -1,6 +1,7 @@
 import rowImageMinstry from '../assets/info-row-img1.png'
 import rowImageJoinCell from '../assets/info-row-img2.png'
 import rowImagePartnerWithGod from '../assets/info-jumbo-3-partner.png'
+import rowImagePrayerRequest from '../assets/info-jumbo-4-prayer.png'
 
 
 export const OurMinistryRowData = {
@@ -12,7 +13,7 @@ export const OurMinistryRowData = {
     text: "We are the fastest growing Subzonal Church in the Love World Nation. We are committed to raising global champions and leaders for the advancement of the gospel of our lord and Savior Jesus Christ.",
     image: rowImageMinstry,
     hr: {
-        class: ' w-32 md:w-40 mb-6 border-2 md:border-4 border-amber-200 '
+        class: 'border-amber-200 '
     } ,
     button: {
         text: 'STATEMENT OF FAITH',
@@ -51,3 +52,20 @@ export const OurMinistryRowData = {
     } 
   };
   
+
+  export const prayerRequestRowData = {
+    title: {
+      content: "Prayer Request",
+      class: "text-amber-400 ",
+      fontFamily: 'Merriweather, serif'
+    },
+    text: "In our ministry we trust in the strength of God’s love. We will be glad and delighted to pray with you.",
+    image: rowImagePrayerRequest,
+    hr: {
+        class: ' border-blue-200 '
+    } ,
+    button: {
+        text: 'Prayer Request',
+        class: `bg-blue-800 hover:bg-blue-700 focus-visible:outline-blue-400 `
+    } 
+  };

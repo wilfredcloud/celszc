@@ -25,7 +25,7 @@ const Home = () => {
       <div className=" my-20 py-20 bg-slate-200">
           <h1
             style={{ fontFamily: "Merriweather, serif" }}
-            className="text-center text-5xl font-bold text-amber-500 "
+            className="text-center text-4xl lg:text-5xl font-bold text-amber-500 px-4  "
           >
             Get Involve In Our Movement
           </h1>

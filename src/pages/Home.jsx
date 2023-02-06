@@ -4,6 +4,7 @@ import {
   OurMinistryRowData,
   joinACellRowData,
   partnerWithGodRowData,
+  prayerRequestRowData
 } from "../utils/data";
 
 const handleJoinCell = () => {
@@ -12,6 +13,14 @@ const handleJoinCell = () => {
 
 const handleStatementOfFaith = () => {
   console.log("Our statement of faith");
+};
+
+const handleGetInvolve = () => {
+  console.log("Get Involve");
+};
+
+const handlePrayerRequest = () => {
+  console.log("Prayer request");
 };
 const Home = () => {
   return (
@@ -30,9 +39,11 @@ const Home = () => {
             Get Involve In Our Movement
           </h1>
           <JumboRow data={joinACellRowData} handleClick={handleJoinCell} />
-        <JumboRow data={partnerWithGodRowData} handleClick={handleJoinCell} />
-       
+        <JumboRow data={partnerWithGodRowData} handleClick={handleGetInvolve} />
       </div>
+
+      <JumboRow data={prayerRequestRowData} handleClick={handlePrayerRequest} />
+
     </div>
   );
 };

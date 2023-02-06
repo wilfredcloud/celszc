@@ -1,5 +1,7 @@
 import rowImageMinstry from '../assets/info-row-img1.png'
-import rowImageCell from '../assets/info-row-img2.png'
+import rowImageJoinCell from '../assets/info-row-img2.png'
+import rowImagePartnerWithGod from '../assets/info-jumbo-3-partner.png'
+
 
 export const OurMinistryRowData = {
     title: {
@@ -25,12 +27,27 @@ export const OurMinistryRowData = {
       class: "text-amber-400 ",
     },
     text: "A cell is a group of like-minded Christians of a similar age, profession, and martial status who meet to support your spiritual growth and development in Christ.",
-    image: rowImageCell,
+    image: rowImageJoinCell,
     order: 'reserved',
    
     button: {
         text: 'Join Now',
         class: 'bg-blue-800  hover:bg-blue-700 focus-visible:outline-blue-800'
+    } 
+  };
+  
+
+  export const partnerWithGodRowData = {
+    title: {
+      content: "Partner With God",
+      class: "text-blue-800",
+    },
+    text: "At christ Embassy, we believe we are called to spread the gospel to the ends of the earth. Through the support of our beloved partners, we have been able to spread the good news with the approach of the kingdom's requirements, it is necessary to fulfill the church's mandate on earth.",
+    image: rowImagePartnerWithGod,
+   
+    button: {
+        text: 'Get Involve',
+        class: 'bg-amber-400 hover:bg-amber-300 focus-visible:outline-amber-400 '
     } 
   };
   

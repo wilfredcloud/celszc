@@ -3,3 +3,5 @@ export {default as Navbar} from './Navbar';
 export {default as ProfileDropdown} from './ProfileDropdown';
 export {default as Hero} from './Hero';
 export {default as JumboRow} from './JumboRow';
+export {default as ServiceExperience} from './ServiceExperience';
+// export {default as ServiceExperience} from './ServiceExperience';

@@ -11,7 +11,9 @@ const Hero = () => {
       className=" h-[546px] text-white  ">
         <div className="flex flex-col justify-center container mx-auto h-full px-4">
 
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[50px] lg:leading-[90px]" style={{fontFamily: 'Merriweather, serif'}}>
+        <h1 className="text-4xl md:text-5xl lg:text-7xl
+         font-extrabold leading-[50px] lg:leading-[90px]"
+          style={{fontFamily: 'Merriweather, serif'}}>
           Welcome To Christ Embassy <br />
           Lagos Subzone C
         </h1>

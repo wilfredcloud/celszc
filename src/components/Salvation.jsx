@@ -14,7 +14,7 @@ const Salvation = () => {
     <div className=" text-center max-w-3xl mx-auto">
 
         <p className="text-lg md:text-xl mt-4 " >Say these words</p>
-        <p className=" my-5 text-xl   mx-auto font-medium"> 
+        <p className=" my-5 text-xl leading-8  mx-auto font-medium"> 
         <img src={leftQuote} alt="Left Quotation Mark" className=" inline mr-3" />
         O LORD GOD, I believe with all my heart in Jesus christ,
            Son of the living God. I believe He died for me and God raised Him from the dead. 

@@ -7,7 +7,7 @@ const Testimony = () => {
     <div className="container mx-auto my-20 px-4">
         <hr className="w-32 md:w-40 mb-6 border-2 md:border-4 border-3 border-amber-200 mx-auto"/>
         <h1 className="text-center text-4xl lg:text-5xl font-bold ">Testimony</h1>
-        <p className="text-lg md:text-xl mt-4 text-center" >Hear what our members says</p>
+        <p className="text-lg md:text-xl mt-4 text-center" >Hear what our members say</p>
         
         <div className=" grid grid-cols-1 lg:grid-cols-3 gap-14 my-16">
         {testimoniesData.map((testifier)=> (<TestimonyCard key={testifier.id} testifier={testifier} />))}

@@ -2,6 +2,10 @@ import rowImageMinstry from '../assets/info-row-img1.png'
 import rowImageJoinCell from '../assets/info-row-img2.png'
 import rowImagePartnerWithGod from '../assets/info-jumbo-3-partner.png'
 import rowImagePrayerRequest from '../assets/info-jumbo-4-prayer.png'
+import testifier1 from '../assets/testifier1.png'
+import testifier2 from '../assets/testifier2.png'
+import testifier3 from '../assets/testifier3.png'
+
 
 
 export const OurMinistryRowData = {
@@ -69,3 +73,29 @@ export const OurMinistryRowData = {
         class: `bg-blue-800 hover:bg-blue-700 focus-visible:outline-blue-400 `
     } 
   };
+
+
+  export const testimoniesData = [
+    {
+      id: 1,
+      name: "Marvin McKinney",
+      text: "“Our church is nothing short of a warmth, lovely and supportive community”",
+      avatar: testifier1,
+      church: "CE Isheri",
+    },
+    {
+      id: 2,
+      name: "Arlene McCoy",
+      text: "“Our church is nothing short of a warmth, lovely and supportive community”",
+      avatar: testifier2,
+      church: "CE Isheri",
+    },
+    {
+      id: 3,
+      name: "Savannah Nguyen",
+      text: "“Our church is nothing short of a warmth, lovely and supportive community”",
+      avatar: testifier3,
+      church: "CE Isheri",
+    },
+  ];
+  

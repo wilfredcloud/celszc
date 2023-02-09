@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero, JumboRow, Salvation, ServiceExperience, Testimony } from "../components";
+import { Footer, Hero, JumboRow, Salvation, ServiceExperience, Testimony } from "../components";
 import {
   OurMinistryRowData,
   joinACellRowData,
@@ -44,10 +44,11 @@ const Home = () => {
       <JumboRow data={prayerRequestRowData} handleClick={handlePrayerRequest} />
       
       <ServiceExperience />
-
       <Testimony />
-
       <Salvation/>
+
+      <Footer/>
+
     </div>
   );
 };

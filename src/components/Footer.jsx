@@ -58,12 +58,12 @@ const Footer = () => {
 
             </div>
 
-<div className="container mx-auto ">
-<hr />
+            <div className="container mx-auto ">
+                <hr />
 
-<p className=" text-sm text-gray-700 text-center mt-10">&copy; Christ Embassy Lagos Sub Zone C. All rights reserved
-</p>
-</div>
+                <p className=" text-sm text-gray-700 text-center mt-10">&copy; Christ Embassy Lagos Sub Zone C. All rights reserved
+                </p>
+            </div>
 
 
         </div>

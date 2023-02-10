@@ -5,7 +5,7 @@ import rowImagePrayerRequest from '../assets/info-jumbo-4-prayer.png'
 import testifier1 from '../assets/testifier1.png'
 import testifier2 from '../assets/testifier2.png'
 import testifier3 from '../assets/testifier3.png'
-
+import logo from '../assets/logo.png'
 
 
 export const OurMinistryRowData = {
@@ -105,3 +105,70 @@ export const salvationPrayer = `O LORD GOD, I believe with all my heart in Jesus
      of my life from this day. Through Him and His Name, I have eternal life; 
      I’m born again. Thank you Lord, for saving my soul! I’m now a child of God.
       Hallelujah!`;
+
+export const about = `Giving your live a meaning and a purpose for living`;
+
+export const footerData = {
+  ourChurch: {
+    title: 'Our Church',
+    logo: logo,
+    about
+  },
+  serviceTime: {
+    sunday:'Sunday at 8:00 am & 10:00am',
+    wednesday: 'Wednesday at 6:30 pm'
+  },
+ 
+  contactUs: {
+    phone: '+234809839483',
+    email: 'info@celszc.org'
+  },
+
+  address: `Christ Embassy Lagos subzone C d24, 
+  Channel TV Isheri Opic North, Ogun state`,
+
+  ministryStore: [
+    {
+      title: 'Pastor Christ live',
+      link: ''
+    },
+    {
+      title: 'Healing School',
+      link: ''
+    },
+    {
+      title: 'Rapsody of Reality',
+      link: ''
+    },
+    {
+      title: 'InnerCity',
+      link: ''
+    },
+    {
+      title: 'Mission',
+      link: ''
+    },
+  ],
+  quickLink: [
+    {
+      title: 'Attend Service',
+      link: ''
+    },
+    {
+      title: 'Give',
+      link: ''
+    },
+    {
+      title: 'Join a Cell',
+      link: ''
+    },
+    {
+      title: 'Share a Testimony',
+      link: ''
+    },
+    {
+      title: 'Testimonies',
+      link: ''
+    }
+  ]
+}

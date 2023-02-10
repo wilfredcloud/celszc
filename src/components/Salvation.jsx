@@ -29,13 +29,13 @@ const Salvation = () => {
 
 
         <div className="w-full sm:w-96 mx-auto my-4">
-          <input type="email" class="form-input w-full px-4 py-3 rounded-lg
+          <input type="email" className="form-input w-full px-4 py-3 rounded-lg
          bg-transparent border border-gray-400"
             placeholder="Fullname" />
-          <input type="email" class="form-input w-full px-4 py-3 rounded-lg
+          <input type="email" className="form-input w-full px-4 py-3 rounded-lg
          bg-transparent border border-gray-400 my-4"
             placeholder="Email" />
-          <input type="email" class="form-input w-full px-4 py-3 rounded-lg
+          <input type="email" className="form-input w-full px-4 py-3 rounded-lg
          bg-transparent border border-gray-400"
             placeholder="Phone number" />
 

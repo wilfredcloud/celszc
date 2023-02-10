@@ -7,4 +7,5 @@ export {default as ServiceExperience} from './ServiceExperience';
 export {default as Testimony} from './Testimony';
 export {default as TestimonyCard} from './TestimonyCard';
 export {default as Salvation} from './Salvation';
+export {default as Footer} from './Footer';
 // export {default as Salvation} from './Salvation';

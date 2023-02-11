@@ -8,4 +8,6 @@ export {default as Testimony} from './Testimony';
 export {default as TestimonyCard} from './TestimonyCard';
 export {default as Salvation} from './Salvation';
 export {default as Footer} from './Footer';
+export {default as Video} from './Video';
+export {default as Comment} from './Comment';
 // export {default as Salvation} from './Salvation';

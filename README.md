@@ -3,7 +3,8 @@
 ![CELSZC Website](CELSZC.png)
 
 ## Project Status
-In progress
+- Home page (Completed)
+- Watch page (In progress)
 
 ## Live Preview
 [Preview Link](https://celszc.netlify.app/)

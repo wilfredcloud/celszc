@@ -12,6 +12,11 @@
     height: 60vh !important;
     width: 100% !important;
 }
+
+.comment-section {
+  height: 80vh !important;
+  width: 100% !important;
+}
   
 @media screen and (max-width: 600px) {
 

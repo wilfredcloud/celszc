@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Box } from '@mui/material'
 import { Home, Login, Watch, Giving } from './pages'
-import { Footer, Marquee, Navbar } from './components'
+import { Footer, LoginModal, Marquee, Navbar } from './components'
+
 
 const App = () => (
   <div>
@@ -16,6 +17,7 @@ const App = () => (
         <Route path='/giving' element={<Giving/>} />
       </Routes>
     </BrowserRouter>
+    <LoginModal/>
     <Footer/>
   </div>
 )

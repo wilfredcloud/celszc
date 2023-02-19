@@ -156,7 +156,7 @@ export const footerData = {
     },
     {
       title: 'Give',
-      link: ''
+      link: '/giving'
     },
     {
       title: 'Join a Cell',

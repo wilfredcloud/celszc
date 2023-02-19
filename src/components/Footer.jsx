@@ -31,7 +31,7 @@ const Footer = () => {
                         text-xl">Quick Link</h3>
                         <ul>
                             {quickLink.map((item, index) => (
-                                <li className="py-2 text-gray-700" key={index}>{item.title}</li>
+                                <li className="py-2 text-gray-700" key={index}><a href={item.link}>{item.title}</a></li>
                             ))}
                         </ul>
                     </div>

@@ -17,7 +17,6 @@ const App = () => (
         <Route path='/giving' element={<Giving/>} />
       </Routes>
     </BrowserRouter>
-    <LoginModal/>
     <Footer/>
   </div>
 )

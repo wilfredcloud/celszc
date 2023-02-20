@@ -18,7 +18,7 @@ const LoginModal = () => {
   };
   return (
     <>
-      <Modal open={showLoginModal} footer={null}>
+      <Modal open={showLoginModal} footer={null} onCancel={handleCancel}>
         <div className="p-2">
           <h1 className=" text-2xl font-medium mb-8">Login to participate</h1>
 

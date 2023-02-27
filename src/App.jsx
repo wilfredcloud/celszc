@@ -7,7 +7,7 @@ import { Home, Login, Watch, Giving } from './pages'
 import { Footer, LoginModal, Marquee, Navbar } from './components'
 
 
-const App = () => (
+const App = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   return (

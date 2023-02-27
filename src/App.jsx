@@ -1,10 +1,13 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AppContext } from './context/AppContext';
-import { Home, Login, Watch } from './pages';
-import { Footer, LoginModal, Marquee, Navbar } from './components';
 
-const App = () => {
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Box } from '@mui/material'
+import { AppContext } from './context/AppContext';
+import { Home, Login, Watch, Giving } from './pages'
+import { Footer, LoginModal, Marquee, Navbar } from './components'
+
+
+const App = () => (
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   return (

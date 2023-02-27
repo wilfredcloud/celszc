@@ -6,10 +6,10 @@ import { ProfileDropdown } from './';
 import Logo from '../assets/logo.png';
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
+  { name: 'Home', href: '/', current: true },
   { name: 'Information Center', href: '#', current: false },
   { name: 'Events', href: '#', current: false },
-  { name: 'Give', href: '#', current: false },
+  { name: 'Give', href: '/giving', current: false },
   { name: 'About us', href: '#', current: false },
 ];
 

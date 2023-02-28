@@ -6,6 +6,7 @@ import { AiOutlineUser } from 'react-icons/ai';
 const AuthModal = () => {
   const { showLoginModal, setShowLoginModal } = useContext(AppContext);
   const [confirmLoading, setConfirmLoading] = useState(false);
+  const [authView, setAuthView] = useState('login');
 
   const handleOk = () => {
     setConfirmLoading(true);
@@ -25,13 +26,17 @@ const AuthModal = () => {
         onCancel={handleCancel}
         width={450}
       >
-        <Register />
+        {authView === 'login' ? (
+          <Login setAuthView={setAuthView} />
+        ) : (
+          <Register setAuthView={setAuthView} />
+        )}
       </Modal>
     </>
   );
 };
 
-const Login = () => {
+const Login = ({ setAuthView }) => {
   return (
     <div className="px-2 py-6">
       <h1 className=" text-3xl font-bold text-center mb-8">Join Service</h1>
@@ -55,7 +60,12 @@ const Login = () => {
 
       <p className="py-2 text-center">
         Do not have an account?{' '}
-        <span className=" text-blue-600 font-bold">Create account</span>
+        <span
+          className=" text-blue-600 hover:text-blue-800 cursor-pointer "
+          onClick={() => setAuthView('create')}
+        >
+          Create account
+        </span>
       </p>
       <Divider plain>OR</Divider>
 
@@ -72,7 +82,7 @@ const Login = () => {
   );
 };
 
-const Register = () => {
+const Register = ({ setAuthView }) => {
   const { Option } = Select;
 
   const options = [
@@ -137,7 +147,12 @@ const Register = () => {
 
       <p className="py-2 text-center">
         I already have an account?{' '}
-        <span className=" text-blue-600 font-bold">Login</span>
+        <span
+          className=" text-blue-600 hover:text-blue-400 cursor-pointer font-bold"
+          onClick={() => setAuthView('login')}
+        >
+          Login
+        </span>
       </p>
       <Divider plain>OR</Divider>
 

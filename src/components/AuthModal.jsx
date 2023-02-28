@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Modal, Divider } from 'antd';
 
-const LoginModal = () => {
+const AuthModal = () => {
   const { showLoginModal, setShowLoginModal } = useContext(AppContext);
   const [confirmLoading, setConfirmLoading] = useState(false);
 
@@ -64,4 +64,4 @@ const LoginModal = () => {
     </>
   );
 };
-export default LoginModal;
+export default AuthModal;

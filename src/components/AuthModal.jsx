@@ -41,11 +41,11 @@ const Login = ({ setAuthView }) => {
     <div className="px-2 py-6">
       <h1 className=" text-3xl font-bold text-center mb-8">Join Service</h1>
 
-      <input
+      <Input
         type="email"
-        className="form-input w-full p-3 rounded-lg
-        bg-transparent border border-gray-400 text-lg mb-4"
-        placeholder="Registered email address"
+        size="large"
+        placeholder="Email address"
+        className=" p-3 mb-4"
       />
 
       <button
@@ -87,7 +87,7 @@ const Register = ({ setAuthView }) => {
 
   const options = [
     {
-      label: 'Manager',
+      label: 'CE Isheri',
       options: [
         { label: 'Church 1', value: 'Church 1' },
         { label: 'Church 2', value: 'Church 1' },

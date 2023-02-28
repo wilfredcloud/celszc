@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import { Modal, Divider } from 'antd';
+import { Modal, Divider, Input } from 'antd';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const AuthModal = () => {
   const { showLoginModal, setShowLoginModal } = useContext(AppContext);
@@ -24,7 +25,7 @@ const AuthModal = () => {
         onCancel={handleCancel}
         width={450}
       >
-        <Login />
+        <Register />
       </Modal>
     </>
   );
@@ -38,7 +39,7 @@ const Login = () => {
       <input
         type="email"
         className="form-input w-full p-3 rounded-lg
-bg-transparent border border-gray-400 text-lg mb-4"
+        bg-transparent border border-gray-400 text-lg mb-4"
         placeholder="Registered email address"
       />
 
@@ -55,6 +56,53 @@ bg-transparent border border-gray-400 text-lg mb-4"
       <p className="py-2 text-center">
         Do not have an account?{' '}
         <span className=" text-blue-600 font-bold">Create account</span>
+      </p>
+      <Divider plain>OR</Divider>
+
+      <button
+        className="mt-4 rounded-md bg-blue-600 w-full
+    p-3.5 text-base font-semibold leading-7
+     text-white shadow-sm hover:bg-blue-700 
+     focus-visible:outline focus-visible:outline-2 
+     focus-visible:outline-offset-2 focus-visible:outline-blue-400 "
+      >
+        Login with Kingschat
+      </button>
+    </div>
+  );
+};
+
+const Register = () => {
+  return (
+    <div className="px-2 py-6">
+      <h1 className=" text-3xl font-bold text-center mb-8">Create Account</h1>
+
+      <Input
+        type="text"
+        size="large"
+        placeholder="Fullname"
+        className=" p-3 mb-4"
+      />
+      <Input
+        type="email"
+        size="large"
+        placeholder="Email"
+        className=" p-3 mb-4"
+      />
+
+      <button
+        className="mt-4 rounded-md bg-amber-400 w-full
+    p-3.5 text-base font-semibold leading-7
+     text-white shadow-sm hover:bg-amber-300 
+     focus-visible:outline focus-visible:outline-2 
+     focus-visible:outline-offset-2 focus-visible:outline-amber-400 "
+      >
+        JOIN
+      </button>
+
+      <p className="py-2 text-center">
+        I already have an account?{' '}
+        <span className=" text-blue-600 font-bold">Login</span>
       </p>
       <Divider plain>OR</Divider>
 

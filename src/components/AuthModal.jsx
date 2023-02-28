@@ -84,9 +84,22 @@ const Register = () => {
         className=" p-3 mb-4"
       />
       <Input
+        type="tel"
+        size="large"
+        placeholder="Phone number"
+        className=" p-3 mb-4"
+      />
+      <Input
         type="email"
         size="large"
-        placeholder="Email"
+        placeholder="Email address"
+        className=" p-3 mb-4"
+      />
+
+      <Input
+        type="text"
+        size="large"
+        placeholder="Select Church"
         className=" p-3 mb-4"
       />
 
@@ -97,7 +110,7 @@ const Register = () => {
      focus-visible:outline focus-visible:outline-2 
      focus-visible:outline-offset-2 focus-visible:outline-amber-400 "
       >
-        JOIN
+        CREATE
       </button>
 
       <p className="py-2 text-center">

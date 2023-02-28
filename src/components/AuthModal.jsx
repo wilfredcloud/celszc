@@ -79,13 +79,17 @@ const Register = () => {
     {
       label: 'Manager',
       options: [
-        { label: 'Jack', value: 'jack' },
-        { label: 'Lucy', value: 'lucy' },
+        { label: 'Church 1', value: 'Church 1' },
+        { label: 'Church 2', value: 'Church 1' },
+        { label: 'Church 3', value: 'Church 3' },
       ],
     },
     {
-      label: 'Engineer',
-      options: [{ label: 'yiminghe', value: 'Yiminghe' }],
+      label: 'Others',
+      options: [
+        { label: 'CE Grace Arena', value: 'Grace Arena' },
+        { label: 'CE Magboro', value: 'CE Magboro' },
+      ],
     },
   ];
 

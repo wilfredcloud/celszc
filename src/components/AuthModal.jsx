@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import { Modal, Divider, Input } from 'antd';
+import { Modal, Divider, Input, Select } from 'antd';
 import { AiOutlineUser } from 'react-icons/ai';
 
 const AuthModal = () => {
@@ -73,6 +73,22 @@ const Login = () => {
 };
 
 const Register = () => {
+  const { Option } = Select;
+
+  const options = [
+    {
+      label: 'Manager',
+      options: [
+        { label: 'Jack', value: 'jack' },
+        { label: 'Lucy', value: 'lucy' },
+      ],
+    },
+    {
+      label: 'Engineer',
+      options: [{ label: 'yiminghe', value: 'Yiminghe' }],
+    },
+  ];
+
   return (
     <div className="px-2 py-6">
       <h1 className=" text-3xl font-bold text-center mb-8">Create Account</h1>
@@ -89,6 +105,7 @@ const Register = () => {
         placeholder="Phone number"
         className=" p-3 mb-4"
       />
+
       <Input
         type="email"
         size="large"
@@ -96,11 +113,12 @@ const Register = () => {
         className=" p-3 mb-4"
       />
 
-      <Input
-        type="text"
+      <Select
+        showSearch
         size="large"
-        placeholder="Select Church"
-        className=" p-3 mb-4"
+        options={options}
+        placeholder="Select your Church"
+        className=" mb-4 w-full"
       />
 
       <button

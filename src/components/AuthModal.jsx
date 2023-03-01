@@ -2,6 +2,10 @@ import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Modal, Divider, Input, Select } from 'antd';
 import { AiOutlineUser } from 'react-icons/ai';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { initFireApp } from '../services/firebaseConfig';
+
+const auth = getAuth(initFireApp);
 
 const AuthModal = () => {
   const { showLoginModal, setShowLoginModal } = useContext(AppContext);
@@ -37,6 +41,24 @@ const AuthModal = () => {
 };
 
 const Login = ({ setAuthView }) => {
+  let [email, setEmail] = useState('');
+
+  const handleUserSignUp = () => {
+    const password = 'password';
+    console.log(email);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+  };
   return (
     <div className="px-2 py-6">
       <h1 className=" text-3xl font-bold text-center mb-8">Join Service</h1>
@@ -44,6 +66,8 @@ const Login = ({ setAuthView }) => {
       <Input
         type="email"
         size="large"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder="Email address"
         className=" p-3 mb-4"
       />
@@ -54,6 +78,7 @@ const Login = ({ setAuthView }) => {
      text-white shadow-sm hover:bg-amber-300 
      focus-visible:outline focus-visible:outline-2 
      focus-visible:outline-offset-2 focus-visible:outline-amber-400 "
+        onClick={handleUserSignUp}
       >
         JOIN
       </button>

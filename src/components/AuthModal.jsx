@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Modal, Divider, Input, Select } from 'antd';
-import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineLoading } from 'react-icons/ai';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../services/firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
@@ -91,13 +91,16 @@ const Login = ({ setAuthView }) => {
 };
 
 const Register = ({ setAuthView }) => {
-  let [fullname, setFullname] = useState('');
-  let [email, setEmail] = useState('');
-  let [phoneNumber, setPhoneNumber] = useState('');
-  let [church, setChurch] = useState('');
+  const [fullname, setFullname] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [church, setChurch] = useState('');
 
   const { Option } = Select;
 
+  const handleChurchChange = (value) => {
+    setChurch(value);
+  };
   const handleUserSignUp = async () => {
     const password = 'password';
     try {
@@ -113,7 +116,7 @@ const Register = ({ setAuthView }) => {
         fullname: fullname,
         email: email,
         phoneNumber: phoneNumber,
-        church: 'Church 1',
+        church: church,
       });
     } catch (error) {
       console.log(error.code);
@@ -126,7 +129,7 @@ const Register = ({ setAuthView }) => {
       label: 'CE Isheri',
       options: [
         { label: 'Church 1', value: 'Church 1' },
-        { label: 'Church 2', value: 'Church 1' },
+        { label: 'Church 2', value: 'Church 2' },
         { label: 'Church 3', value: 'Church 3' },
       ],
     },
@@ -175,6 +178,9 @@ const Register = ({ setAuthView }) => {
         options={options}
         placeholder="Select your Church"
         className=" mb-4 w-full"
+        onChange={handleChurchChange}
+        listItemHeight={10}
+        listHeight={250}
       />
 
       <button
@@ -182,9 +188,11 @@ const Register = ({ setAuthView }) => {
     p-3.5 text-base font-semibold leading-7
      text-white shadow-sm hover:bg-amber-300 
      focus-visible:outline focus-visible:outline-2 
-     focus-visible:outline-offset-2 focus-visible:outline-amber-400 "
+     focus-visible:outline-offset-2 focus-visible:outline-amber-400 disabled:bg-amber-200 disabled:cursor-wait
+     flex flex-row justify-center items-center space-x-3"
         onClick={handleUserSignUp}
       >
+        <AiOutlineLoading size={25} className="loaderIcon" />
         CREATE
       </button>
 

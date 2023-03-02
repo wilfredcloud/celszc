@@ -2,10 +2,8 @@ import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Modal, Divider, Input, Select } from 'antd';
 import { AiOutlineUser } from 'react-icons/ai';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { initFireApp } from '../services/firebaseConfig';
-
-const auth = getAuth(initFireApp);
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from '../services/firebaseConfig';
 
 const AuthModal = () => {
   const { showLoginModal, setShowLoginModal } = useContext(AppContext);
@@ -43,19 +41,19 @@ const AuthModal = () => {
 const Login = ({ setAuthView }) => {
   let [email, setEmail] = useState('');
 
-  const handleUserSignUp = () => {
+  const handleUserSignUp = async () => {
     const password = 'password';
-    console.log(email);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(userCredential);
+    } catch (error) {
+      console.log(error.code);
+      console.log(error.message);
+    }
   };
   return (
     <div className="px-2 py-6">

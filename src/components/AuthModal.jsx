@@ -4,6 +4,7 @@ import { Modal, Divider, Input, Select } from 'antd';
 import { AiOutlineUser } from 'react-icons/ai';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../services/firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
 
 const AuthModal = () => {
   const { showLoginModal, setShowLoginModal } = useContext(AppContext);
@@ -41,20 +42,6 @@ const AuthModal = () => {
 const Login = ({ setAuthView }) => {
   let [email, setEmail] = useState('');
 
-  const handleUserSignUp = async () => {
-    const password = 'password';
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log(userCredential);
-    } catch (error) {
-      console.log(error.code);
-      console.log(error.message);
-    }
-  };
   return (
     <div className="px-2 py-6">
       <h1 className=" text-3xl font-bold text-center mb-8">Join Service</h1>
@@ -74,7 +61,7 @@ const Login = ({ setAuthView }) => {
      text-white shadow-sm hover:bg-amber-300 
      focus-visible:outline focus-visible:outline-2 
      focus-visible:outline-offset-2 focus-visible:outline-amber-400 "
-        onClick={handleUserSignUp}
+        onClick={() => {}}
       >
         JOIN
       </button>
@@ -104,7 +91,35 @@ const Login = ({ setAuthView }) => {
 };
 
 const Register = ({ setAuthView }) => {
+  let [fullname, setFullname] = useState('');
+  let [email, setEmail] = useState('');
+  let [phoneNumber, setPhoneNumber] = useState('');
+  let [church, setChurch] = useState('');
+
   const { Option } = Select;
+
+  const handleUserSignUp = async () => {
+    const password = 'password';
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(userCredential);
+
+      await addDoc(collection(db, 'users'), {
+        uid: userCredential.user.uid,
+        fullname: fullname,
+        email: email,
+        phoneNumber: phoneNumber,
+        church: 'Church 1',
+      });
+    } catch (error) {
+      console.log(error.code);
+      console.log(error.message);
+    }
+  };
 
   const options = [
     {
@@ -131,12 +146,16 @@ const Register = ({ setAuthView }) => {
       <Input
         type="text"
         size="large"
+        value={fullname}
+        onChange={(e) => setFullname(e.target.value)}
         placeholder="Fullname"
         className=" p-3 mb-4"
       />
       <Input
         type="tel"
         size="large"
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.target.value)}
         placeholder="Phone number"
         className=" p-3 mb-4"
       />
@@ -144,6 +163,8 @@ const Register = ({ setAuthView }) => {
       <Input
         type="email"
         size="large"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder="Email address"
         className=" p-3 mb-4"
       />
@@ -162,6 +183,7 @@ const Register = ({ setAuthView }) => {
      text-white shadow-sm hover:bg-amber-300 
      focus-visible:outline focus-visible:outline-2 
      focus-visible:outline-offset-2 focus-visible:outline-amber-400 "
+        onClick={handleUserSignUp}
       >
         CREATE
       </button>

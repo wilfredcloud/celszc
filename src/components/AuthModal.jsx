@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import { Modal, Divider, Input, Select } from 'antd';
+import { Modal, Divider, Input, Select, Form, Button } from 'antd';
 import { AiOutlineUser, AiOutlineLoading } from 'react-icons/ai';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../services/firebaseConfig';
@@ -41,32 +41,52 @@ const AuthModal = () => {
 
 const Login = ({ setAuthView }) => {
   let [email, setEmail] = useState('');
-
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values);
+  };
   return (
     <div className="px-2 py-6">
       <h1 className=" text-3xl font-bold text-center mb-8">Join Service</h1>
 
-      <Input
-        type="email"
-        size="large"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email address"
-        className=" p-3 mb-4"
-      />
+      <Form name="normal_login" className="login-form" onFinish={onFinish}>
+        <Form.Item
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: 'Please enter you email!',
+            },
+            {
+              type: 'email',
+              message: 'Please enter a valid email!',
+            },
+          ]}
+          className="mb-4"
+        >
+          <Input
+            type="email"
+            size="large"
+            placeholder="Email address"
+            className=" p-3"
+          />
+        </Form.Item>
 
-      <button
-        className="mt-4 rounded-md bg-amber-400 w-full
-    p-3.5 text-base font-semibold leading-7
+        <Form.Item>
+          <button
+            type="submit"
+            className="mt-4 rounded-md bg-amber-400 w-full
+    p-3 text-base font-semibold leading-7
      text-white shadow-sm hover:bg-amber-300 
      focus-visible:outline focus-visible:outline-2 
      focus-visible:outline-offset-2 focus-visible:outline-amber-400 "
-        onClick={() => {}}
-      >
-        JOIN
-      </button>
+            onClick={() => {}}
+          >
+            JOIN
+          </button>
+        </Form.Item>
+      </Form>
 
-      <p className="py-2 text-center">
+      <p className=" text-center">
         Do not have an account?{' '}
         <span
           className=" text-blue-600 hover:text-blue-800 cursor-pointer "
@@ -78,8 +98,8 @@ const Login = ({ setAuthView }) => {
       <Divider plain>OR</Divider>
 
       <button
-        className="mt-4 rounded-md bg-blue-600 w-full
-    p-3.5 text-base font-semibold leading-7
+        className=" rounded-md bg-blue-600 w-full
+    p-3 text-base font-semibold leading-7
      text-white shadow-sm hover:bg-blue-700 
      focus-visible:outline focus-visible:outline-2 
      focus-visible:outline-offset-2 focus-visible:outline-blue-400 "

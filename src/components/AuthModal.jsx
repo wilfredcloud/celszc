@@ -224,7 +224,7 @@ const Register = ({ setAuthView }) => {
             size="large"
             options={options}
             placeholder="Select your Church"
-            className=" w-full"
+            className=" w-full "
           />
         </Form.Item>
 

@@ -1,16 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
 
 /* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap"); */
-
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 .react-player {
-    height: 60vh !important;
-    width: 100% !important;
+  height: 60vh !important;
+  width: 100% !important;
 }
 
 .comment-section {
@@ -18,9 +16,23 @@
   width: 100% !important;
 }
 
-@media screen and (max-width: 600px) {
+.loaderIcon {
+  margin-right: 7px;
+  top: 2px;
+  animation: spin 1s infinite linear;
+}
 
-    .react-player {
-      height: 45vh !important;
-    }
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
   }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .react-player {
+    height: 45vh !important;
+  }
+}

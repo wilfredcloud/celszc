@@ -13,9 +13,9 @@ const Comment = () => {
       </div>
       {/* body */}
       <div className=" flex-1 px-2">
-        <ChatMessage />
-        <ChatMessage />
-        <ChatMessage />
+        {[1, 2, 3].map((item) => (
+          <ChatMessage key={item} />
+        ))}
       </div>
       {/* chat input */}
       <div className=" bg-white  flex flex-row justify-between items-center border-t">

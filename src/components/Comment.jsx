@@ -14,6 +14,8 @@ const Comment = () => {
       {/* body */}
       <div className=" flex-1 px-2">
         <ChatMessage />
+        <ChatMessage />
+        <ChatMessage />
       </div>
       {/* chat input */}
       <div className=" bg-white  flex flex-row justify-between items-center border-t">

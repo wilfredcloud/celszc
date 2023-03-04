@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiMessageSquareDots } from 'react-icons/bi';
 import { RiSendPlane2Fill } from 'react-icons/ri';
+import { ChatMessage } from './';
 const Comment = () => {
   return (
     <div className="border rounded-xl comment-section flex flex-col justify-between">
@@ -10,7 +11,11 @@ const Comment = () => {
       >
         <BiMessageSquareDots size={30} /> <span>Live Chats</span>
       </div>
-      <div className=" flex-1 px-2"></div>
+      {/* body */}
+      <div className=" flex-1 px-2">
+        <ChatMessage />
+      </div>
+      {/* chat input */}
       <div className=" bg-white  flex flex-row justify-between items-center border-t">
         <input
           type="text"

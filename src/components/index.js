@@ -11,4 +11,4 @@ export { default as Footer } from './Footer';
 export { default as Video } from './Video';
 export { default as Comment } from './Comment';
 export { default as AuthModal } from './AuthModal';
-// export {default as Salvation} from './Salvation';
+export { default as ChatMessage } from './ChatMessage';

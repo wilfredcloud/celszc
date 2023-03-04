@@ -12,7 +12,8 @@
 }
 
 .comment-section {
-  height: 80vh !important;
+  height: 70vh !important;
+  overflow-y: auto;
   width: 100% !important;
 }
 

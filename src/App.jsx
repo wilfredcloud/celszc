@@ -11,14 +11,12 @@ const App = () => {
     <AppContext.Provider value={{ showLoginModal, setShowLoginModal }}>
       <Marquee />
       <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/watch" element={<Watch />} />
-          <Route path="/giving" element={<Giving />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/watch" element={<Watch />} />
+        <Route path="/giving" element={<Giving />} />
+      </Routes>
       <AuthModal />
       <Footer />
     </AppContext.Provider>

@@ -1,10 +1,11 @@
 import { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import { Modal, Divider, Input, Select, Form, Button } from 'antd';
+import { Modal, Divider, Input, Select, Form, Button, Alert } from 'antd';
 import { AiOutlineUser, AiOutlineLoading } from 'react-icons/ai';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../services/firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 const AuthModal = () => {
   const { showLoginModal, setShowLoginModal } = useContext(AppContext);
@@ -30,16 +31,22 @@ const AuthModal = () => {
         width={450}
       >
         {authView === 'login' ? (
-          <Login setAuthView={setAuthView} />
+          <Login
+            setAuthView={setAuthView}
+            setShowLoginModal={setShowLoginModal}
+          />
         ) : (
-          <Register setAuthView={setAuthView} />
+          <Register
+            setAuthView={setAuthView}
+            setShowLoginModal={setShowLoginModal}
+          />
         )}
       </Modal>
     </>
   );
 };
 
-const Login = ({ setAuthView }) => {
+const Login = ({ setAuthView, setShowLoginModal }) => {
   let [email, setEmail] = useState('');
 
   const handleLogin = (values) => {
@@ -111,9 +118,15 @@ const Login = ({ setAuthView }) => {
   );
 };
 
-const Register = ({ setAuthView }) => {
+const Register = ({ setAuthView, setShowLoginModal }) => {
+  const [loading, setLoading] = useState(false);
+  const [createError, setCreateError] = useState('');
+  const navigate = useNavigate();
+  const password = 'password';
+
   const handleUserSignUp = async (formValues) => {
-    const password = 'password';
+    setCreateError('');
+    setLoading(true);
     const { email, fullname, phoneNumber, church } = formValues;
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -131,9 +144,17 @@ const Register = ({ setAuthView }) => {
         church: church,
       });
     } catch (error) {
-      console.log(error.code);
-      console.log(error.message);
+      if (error.message == 'Firebase: Error (auth/email-already-in-use).') {
+        setCreateError('An account already exist with this email');
+      } else {
+        setCreateError('Oop! something went wrong try again');
+      }
+      setLoading(false);
+      return;
     }
+    setLoading(false);
+    setShowLoginModal(false);
+    navigate('/watch');
   };
 
   const options = [
@@ -159,6 +180,9 @@ const Register = ({ setAuthView }) => {
   return (
     <div className="px-2 py-6">
       <h1 className=" text-3xl font-bold text-center mb-8">Create Account</h1>
+      {createError && (
+        <Alert type="error" message={createError} className="mb-4 py-[12px]" />
+      )}
       <Form onFinish={handleUserSignUp}>
         <Form.Item
           name="fullname"
@@ -214,7 +238,7 @@ const Register = ({ setAuthView }) => {
           rules={[
             {
               required: true,
-              message: 'Please select your email!',
+              message: 'Please select your church!',
             },
           ]}
           className="mb-4"
@@ -236,9 +260,13 @@ const Register = ({ setAuthView }) => {
      focus-visible:outline focus-visible:outline-2 
      focus-visible:outline-offset-2 focus-visible:outline-amber-400 disabled:bg-amber-200 disabled:cursor-wait
      flex flex-row justify-center items-center space-x-3"
+          disabled={loading}
         >
-          <AiOutlineLoading size={25} className="loaderIcon" />
-          CREATE
+          {loading ? (
+            <AiOutlineLoading size={25} className="loaderIcon" />
+          ) : (
+            'CREATE'
+          )}
         </button>
       </Form>
 

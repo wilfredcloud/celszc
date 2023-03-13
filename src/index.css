@@ -23,6 +23,11 @@
   animation: spin 1s infinite linear;
 }
 
+.ant-select-selector {
+  height: 50px !important;
+  padding-top: 5px !important;
+}
+
 @keyframes spin {
   from {
     transform: scale(1) rotate(0deg);
